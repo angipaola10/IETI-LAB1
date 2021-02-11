@@ -8,11 +8,11 @@ export class Todo extends React.Component {
 
     render() {
         return (  
-            <>
-            <h2>{this.props.text}</h2> 
-            <h2>{this.props.priority}</h2> 
-            <h2>{this.props.dueDate.toString()}</h2> 
-            </>
+            <div className="card shadow-sm m-4">
+                <h6> Text: {this.props.text}</h6> 
+                <h6>Priority: {this.props.priority}</h6> 
+                <h6>Due Date: {this.props.dueDate.toString()}</h6> 
+            </div>
         );
     }
 

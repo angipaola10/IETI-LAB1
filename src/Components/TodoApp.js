@@ -11,37 +11,41 @@ export class TodoApp extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>TODO</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="new-todo">
-                        What needs to be done?
-                    </label>
-                    <input
-                        id="new-text"
-                        name="text"
-                        onChange={this.handleChange}
-                        value={this.state.text}
-                    />
-                    <input
-                        id="new-priority"
-                        name="priority"
-                        type="number"
-                        onChange={this.handleChange}
-                        value={this.state.priority}
-                    />
-                    <input
-                        id="new-dueDate"
-                        name="dueDate"
-                        type="date"
-                        onChange={this.handleChange}
-                        value={this.state.dueDate}
-                    />
-                    <button type='submit'>
-                        Add #{this.state.items.length + 1}
-                    </button>
-                </form>
-                <TodoList todoList={this.state.items} />
+            <div className="row">
+                <div className="col-5 text-center m-4">
+                    <h1>New Item</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <input
+                            id="new-text"
+                            name="text"
+                            onChange={this.handleChange}
+                            value={this.state.text}
+                            className="form-control m-4"
+                        />
+                        <input
+                            id="new-priority"
+                            name="priority"
+                            type="number"
+                            onChange={this.handleChange}
+                            value={this.state.priority}
+                            className="form-control m-4"
+                        />
+                        <input
+                            id="new-dueDate"
+                            name="dueDate"
+                            type="date"
+                            onChange={this.handleChange}
+                            value={this.state.dueDate}
+                            className="form-control m-4"
+                        />
+                        <button type='submit' className="btn btn-primary">
+                            Add #{this.state.items.length + 1}
+                        </button>
+                    </form>
+                </div>
+                <div className="col-6">
+                    <TodoList todoList={this.state.items} />
+                </div>
             </div>
         );
     }
@@ -68,4 +72,3 @@ export class TodoApp extends React.Component {
         }));
     }
 }
-
